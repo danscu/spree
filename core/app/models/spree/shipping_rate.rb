@@ -47,7 +47,12 @@ module Spree
     end
 
     def shipping_method_code
-      shipping_method.code
+      ship_method = shipping_method
+      if ship_method
+        ship_method.code
+      else
+        ""
+      end
     end
 
     def tax_rate
